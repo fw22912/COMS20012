@@ -67,17 +67,26 @@ at all possible do try and attend the lab where there will be *more* support.
 
 38.	From End Devices the bottom left, select a Server and drag into the space. 
 39.	Go to connections and get a (Copper) Cross-Over cable; click on the FastEthernet0 on the server, and on the second router click on the FastEthernet0/0.
-40.	Label the server (172.16.1.100), then go to its desktop tab and click on IP Configuration. In the IP Address textbox type (172.16.1.100), in the Subnet Mask textbox type (255.255.0.0) and in the Default Gateway textbox type (172.16.0.1).  Close this window. 
-41.	Click on the second router and select the config tab. 
-42.	Click on the FastEthernet0/0. In the IP Address textbox type (172.16.0.1); in the Subnet Mask textbox type (255.255.0.0); turn the Port Status on and close this window.
-43. Click on the server, go to the Command Prompt and type `ping 172.16.0.1` and hit `enter`.  Again, you should see 4 packets sent and received (i.e. no losses).  Now type `ipconfig` and hit `enter` - you should see the IPv6 address, IP address, Subnet Mask and Default Gateway.  Close the window. 
-44.	Click on the first router, go the Config tab and click on the Static tab under Routing.
-45.	Type in the Network textbox (172.16.0.0), in the Mask textbox type (255.255.0.0) and in the Next Hop textbox type (10.0.0.2).  Now click Add and close this window.
-46.	Click on the second router and on the Config tab click Static (under the Routing tab). 
-47.	In the Network textbox type (192.168.1.0); in the Mask textbox type (255.255.255.0); in the Next Hop textbox type (10.0.0.1); then click Add and close this window.
-48.	Click on the first PC and go to the Command Prompt and type `ping 172.16.1.100` and press `enter`.  You should see 4 packets sent and received.  Close this window.
-49.	Click on the second router and go to the Config tab and to the Static tab under Routing.  In the Network tab textbox type (192.168.5.0) and in the Mask textbox type (255.255.255.0) and in the Next Hop textbox type (10.0.0.1). Click Add and close this window. 
-50.	Click on the second PC and open Command Prompt. Type `ping 172.16.1.100` and press `enter`. Again, 4 packets successfully sent and received. Your network is up and running!
+40.	Label the server (172.16.1.100), then go to its desktop tab and click on IP Configuration. In the IP Address textbox type (172.16.1.100), in the Subnet Mask textbox type (255.255.0.0) and in the Default Gateway textbox type (172.16.0.1).  Close this window.
+    ![Screenshot from 2024-02-08 16-45-59](https://github.com/fw22912/COMS20012/assets/146180764/ec1fe784-2287-4264-aa33-63ba4fa74740)
+
+42.	Click on the second router and select the config tab. 
+43.	Click on the FastEthernet0/0. In the IP Address textbox type (172.16.0.1); in the Subnet Mask textbox type (255.255.0.0); turn the Port Status on and close this window.
+
+45. Click on the server, go to the Command Prompt and type `ping 172.16.0.1` and hit `enter`.  Again, you should see 4 packets sent and received (i.e. no losses).  Now type `ipconfig` and hit `enter` - you should see the IPv6 address, IP address, Subnet Mask and Default Gateway.  Close the window.
+     ![Screenshot from 2024-02-08 16-48-38](https://github.com/fw22912/COMS20012/assets/146180764/3042cce0-32d4-4be5-8e65-ca0e3d373ba5)
+47.	Click on the first router, go the Config tab and click on the Static tab under Routing.
+49.	Type in the Network textbox (172.16.0.0), in the Mask textbox type (255.255.0.0) and in the Next Hop textbox type (10.0.0.2).  Now click Add and close this window.
+    ![Screenshot from 2024-02-08 16-50-33](https://github.com/fw22912/COMS20012/assets/146180764/38a2ef65-a7e4-40b0-9619-4c703f341933)
+
+51.	Click on the second router and on the Config tab click Static (under the Routing tab). 
+52.	In the Network textbox type (192.168.1.0); in the Mask textbox type (255.255.255.0); in the Next Hop textbox type (10.0.0.1); then click Add and close this window.
+53.	Click on the first PC and go to the Command Prompt and type `ping 172.16.1.100` and press `enter`.  You should see 4 packets sent and received.  Close this window.
+    ![Screenshot from 2024-02-08 16-52-17](https://github.com/fw22912/COMS20012/assets/146180764/acf85331-8e15-4951-bb17-0283ac32a7f4)
+
+55.	Click on the second router and go to the Config tab and to the Static tab under Routing.  In the Network tab textbox type (192.168.5.0) and in the Mask textbox type (255.255.255.0) and in the Next Hop textbox type (10.0.0.1). Click Add and close this window.
+    
+57.	Click on the second PC and open Command Prompt. Type `ping 172.16.1.100` and press `enter`. Again, 4 packets successfully sent and received. Your network is up and running!
 
 
 ## Exercise 2: Testing IoT house
