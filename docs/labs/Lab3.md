@@ -82,11 +82,15 @@ at all possible do try and attend the lab where there will be *more* support.
 51.	Click on the second router and on the Config tab click Static (under the Routing tab). 
 52.	In the Network textbox type (192.168.1.0); in the Mask textbox type (255.255.255.0); in the Next Hop textbox type (10.0.0.1); then click Add and close this window.
 53.	Click on the first PC and go to the Command Prompt and type `ping 172.16.1.100` and press `enter`.  You should see 4 packets sent and received.  Close this window.
-    ![Screenshot from 2024-02-08 16-52-17](https://github.com/fw22912/COMS20012/assets/146180764/acf85331-8e15-4951-bb17-0283ac32a7f4)
+ ![image](https://github.com/fw22912/COMS20012/assets/146180764/d4a8b32b-0f1d-4fff-b8ca-0dc1621d74dd)
 
 55.	Click on the second router and go to the Config tab and to the Static tab under Routing.  In the Network tab textbox type (192.168.5.0) and in the Mask textbox type (255.255.255.0) and in the Next Hop textbox type (10.0.0.1). Click Add and close this window.
+    ![image](https://github.com/fw22912/COMS20012/assets/146180764/3ed7d9df-8fcb-47b5-816c-d29d777ba55b)
+
     
 57.	Click on the second PC and open Command Prompt. Type `ping 172.16.1.100` and press `enter`. Again, 4 packets successfully sent and received. Your network is up and running!
+    ![image](https://github.com/fw22912/COMS20012/assets/146180764/cd7fcba9-b6ca-4d62-a62b-8a72e872b491)
+
 
 
 ## Exercise 2: Testing IoT house
