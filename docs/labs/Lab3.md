@@ -104,9 +104,12 @@ A tablet acts as the control panel for operating the devices within the house. I
 2.	The single board computer has been configured to act as a web server to allow the devices to be controlled over the local network. Click the Desktop tab of the Smartphone window and click Web Browser. 
 3.	You will see an empty web browser window on the Smartphone. Click in the address bar of the browser (to the right of the initials URL). 
 4.	Type the IP address for the single board computer, which is 10.1.1.100 
-5.	Press Enter on your keyboard or click Go on the screen. 
-6.	You will see six buttons. Test the buttons and view the changes in the alarm, front door and garage door. 
-7.	Close the doors and enable the alarm before closing the Smartphone window, as though the owner has left the house locked and secure while away for the day. 
+5.	Press Enter on your keyboard or click Go on the screen.
+   ![image](https://github.com/fw22912/COMS20012/assets/146180764/410ab8df-87dd-43c7-9ec9-57b89717a8f4)
+
+7.	You will see six buttons. Test the buttons and view the changes in the alarm, front door and garage door. 
+8.	Close the doors and enable the alarm before closing the Smartphone window, as though the owner has left the house locked and secure while away for the day. 
+![image](https://github.com/fw22912/COMS20012/assets/146180764/a5b14afc-9f5b-4b42-8cb5-ca9d1924e915)
 
 Whenever IoT devices are connected to a network, potential vulnerabilities are introduced. With the advantages of the convenience comes a risk that an attacker may be able to gain access and cause harm. 
 We will look at the security measures that have been taken in this IoT house scenario and perform a basic penetration test by finding a way an attacker may still manage to gain control over the doors and alarm from outside the house. 
@@ -120,8 +123,10 @@ The house owner has chosen to keep the network which controls the home security 
 
 The house owner is using wireless for the benefit of some mobility, rather than using wired devices which would be fixed into place. The wireless access point has been mounted on the outside of the house so that the Smartphone is within range as he approaches the doors. The convenience of using this wireless networking means that network traffic is not just confined to the wires within the house, but is also visible to and is potentially accessible to attackers from outside. 
 1.	Click the House Control Panel (Tablet). A window will pop open. 
-2.	Click the Config to see the interface configuration options. 
-3.	Click Wireless0 from the options towards the left of the window to view settings for the wireless interface.
+2.	Click the Config to see the interface configuration options.
+   ![image](https://github.com/fw22912/COMS20012/assets/146180764/565f3f4d-d699-43ff-b3ef-89218dc31352)
+
+4.	Click Wireless0 from the options towards the left of the window to view settings for the wireless interface.
 
 You can view the settings the tablet is using to connect to the Wireless Access Point and some details about the type of wireless network it is: 
 
@@ -154,7 +159,9 @@ One way an attacker could gain access to the network by connecting to Switch1 fr
 1.	From the devices menu at the bottom-left of the Packet Tracer screen, select End Devices. 
 2.	In the list of end devices, you will see a symbol for a generic laptop computer. Click the symbol and place one laptop in to the workspace, to the left of the IoT House. 
 3.	Click the end of the cable at the Wireless Access Point, where there is a green light, and drag the end of the cable to the new laptop computer. If you are receiving the “Configure is Locked” message instead then you are not clicking in the right place. 
-4.	You should see a list appear, which shows the connection types available on the laptop. This is a copper Ethernet cable, so choose the FastEthernet0 option. 
+4.	You should see a list appear, which shows the connection types available on the laptop. This is a copper Ethernet cable, so choose the FastEthernet0 option.
+   ![image](https://github.com/fw22912/COMS20012/assets/146180764/e1bc0aa3-cf03-46b5-81a3-f94b141711e8)
+
 
 After around 30 seconds you should see that the lights at both ends of the cable have returned to a green colour, indicating correct physical connectivity. The attacker’s laptop computer is now physically connected to the switch in the house’s network, but may not yet be logically connected, i.e. it cannot communicate with any devices. 
 
@@ -168,7 +175,9 @@ In the next steps, we will try pinging the IP address of the single board comput
 
 5.	Click the Laptop. A window will open. 
 7.	Click the Desktop tab and open Command Prompt. 
-8.	Type `ping 10.1.1.100` then press `Enter` on your keyboard. 
+8.	Type `ping 10.1.1.100` then press `Enter` on your keyboard.
+![image](https://github.com/fw22912/COMS20012/assets/146180764/d550cfb8-9329-45da-ac90-bbeb618de178)
+
 
 You will see that it tries to ping the address four times. Each attempt will fail because no reply is received, and the request will time out. This is because the switch will see which address the ping was sent from and drop the packet, rather than forwarding it to the single board computer. 
 
@@ -185,7 +194,8 @@ To spoof the MAC address, the attacker first needs to find the MAC of a valid de
 1.	Click the Laptop to open its window again. 
 2.	Click the Config tab. 
 3.	From the options on the left, click FastEthernet0. The interface configuration options will appear. 
-4.	Delete the existing MAC address and replace it with 0010.1161.3339 
+4.	Delete the existing MAC address and replace it with 0010.1161.3339
+   ![image](https://github.com/fw22912/COMS20012/assets/146180764/83cfaa0f-6370-4a74-9eda-9ed5964badc5)
 
 If the attacker was now to perform a ping scan of some common IP address ranges, they would receive a response from the IP address held by SBC0, the single board computer. It would make sense to begin scanning within the private IP address ranges, which would often be used in homes and small office situations and are as follows: 
 
@@ -201,7 +211,9 @@ This scan would now reveal that SBC0 has an address of 10.1.1.100. The laptop wo
 6.	Type in an address of 10.1.1.99 
 7.	Click in the Subnet Mask box and 255.0.0.0 should appear. Leave this as it appears. 
 8.	Click the Desktop tab then click Command Prompt 
-9.	Type `ping 10.1.1.100` again, then press `Enter` on your keyboard. 
+9.	Type `ping 10.1.1.100` again, then press `Enter` on your keyboard.
+    ![image](https://github.com/fw22912/COMS20012/assets/146180764/067f4a27-1691-4a83-838c-c0df2a348ca6)
+
 
 This time you should find that the pings are successful because you receive replies. Having established communication with the computer that controls the doors and alarm, the attacker could now use software like nmap to perform a port scan. This will test TCP or UDP ports (at the transport layer) to determine which protocols may be active and, therefore, which services are available on the device. This will reveal that TCP port 80 is open, which represents the HTTP used by normal web browsing. 
 
