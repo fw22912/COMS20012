@@ -53,23 +53,31 @@ at all possible do try and attend the lab where there will be *more* support.
  ![Screenshot from 2024-02-08 16-33-35](https://github.com/fw22912/COMS20012/assets/146180764/f17342c1-e310-45f6-b958-01a3d2827a0c)
 
 29.	Pull up another PT-Router and from Connections get a Serial DCE cable; connect that into the router that already has the PCs plugged into it and plug into the Serial2/0 port.
-30.	Connect the other end of the cable to the other router’s Serial2/0.
-31.	Click on the first router, go to the Config tab and select Serial2/0. Set the clock rate to (56000); in the IP Address textbox type (10.0.0.1); in the Subnet Mask textbox type (255.0.0.0); and turn the Port Status to on. Then close the window. 
-32.	Now go back and click on the second router. Go to the Config tab and select Serial2/0.  Set the clock rate to (56000); in the IP Address textbox type (10.0.0.2); in the Subnet Mask textbox type (255.0.0.0); and turn the Port Status On.  Then close the window. 
-33.	Click on the first router and select the CLI tab.  Press (ctrl c) and hit (enter) (you should now see "Router#"). Type (show ip route) and hit (enter). You should now see that in addition to the 2x PCs you have the other router (10.0.0.0/8) is directly connected via Serial2/0. 
-34.	From End Devices the bottom left, select a Server and drag into the space. 
-35.	Go to connections and get a (Copper) Cross-Over cable; click on the FastEthernet0 on the server, and on the second router click on the FastEthernet0/0.
-36.	Label the server (172.16.1.100), then go to its desktop tab and click on IP Configuration. In the IP Address textbox type (172.16.1.100), in the Subnet Mask textbox type (255.255.0.0) and in the Default Gateway textbox type (172.16.0.1).  Close this window. 
-37.	Click on the second router and select the config tab. 
-38.	Click on the FastEthernet0/0. In the IP Address textbox type (172.16.0.1); in the Subnet Mask textbox type (255.255.0.0); turn the Port Status on and close this window.
-39. Click on the server, go to the Command Prompt and type `ping 172.16.0.1` and hit `enter`.  Again, you should see 4 packets sent and received (i.e. no losses).  Now type `ipconfig` and hit `enter` - you should see the IPv6 address, IP address, Subnet Mask and Default Gateway.  Close the window. 
-40.	Click on the first router, go the Config tab and click on the Static tab under Routing.
-41.	Type in the Network textbox (172.16.0.0), in the Mask textbox type (255.255.0.0) and in the Next Hop textbox type (10.0.0.2).  Now click Add and close this window.
-42.	Click on the second router and on the Config tab click Static (under the Routing tab). 
-43.	In the Network textbox type (192.168.1.0); in the Mask textbox type (255.255.255.0); in the Next Hop textbox type (10.0.0.1); then click Add and close this window.
-44.	Click on the first PC and go to the Command Prompt and type `ping 172.16.1.100` and press `enter`.  You should see 4 packets sent and received.  Close this window.
-45.	Click on the second router and go to the Config tab and to the Static tab under Routing.  In the Network tab textbox type (192.168.5.0) and in the Mask textbox type (255.255.255.0) and in the Next Hop textbox type (10.0.0.1). Click Add and close this window. 
-46.	Click on the second PC and open Command Prompt. Type `ping 172.16.1.100` and press `enter`. Again, 4 packets successfully sent and received. Your network is up and running!
+    ![Screenshot from 2024-02-08 16-35-39](https://github.com/fw22912/COMS20012/assets/146180764/b60a3c1f-af9e-4ba4-a17c-5938c2bb30a9)
+
+31.	Connect the other end of the cable to the other router’s Serial2/0.
+32.	Click on the first router, go to the Config tab and select Serial2/0. Set the clock rate to (56000); in the IP Address textbox type (10.0.0.1); in the Subnet Mask textbox type (255.0.0.0); and turn the Port Status to on. Then close the window.
+    ![Screenshot from 2024-02-08 16-36-26](https://github.com/fw22912/COMS20012/assets/146180764/c264bad5-98cd-429c-9a29-bda617c0f86b)
+
+34.	Now go back and click on the second router. Go to the Config tab and select Serial2/0.  Set the clock rate to (56000); in the IP Address textbox type (10.0.0.2); in the Subnet Mask textbox type (255.0.0.0); and turn the Port Status On.  Then close the window.
+    ![Screenshot from 2024-02-08 16-39-17](https://github.com/fw22912/COMS20012/assets/146180764/3c78ffc7-dddb-4575-b05f-d095b946bed4)
+
+36.	Click on the first router and select the CLI tab.  Press (ctrl c) and hit (enter) (you should now see "Router#"). Type (show ip route) and hit (enter). You should now see that in addition to the 2x PCs you have the other router (10.0.0.0/8) is directly connected via Serial2/0.
+    ![Screenshot from 2024-02-08 16-42-20](https://github.com/fw22912/COMS20012/assets/146180764/75ea0569-0802-4034-86ee-1d72b05495e5)
+
+38.	From End Devices the bottom left, select a Server and drag into the space. 
+39.	Go to connections and get a (Copper) Cross-Over cable; click on the FastEthernet0 on the server, and on the second router click on the FastEthernet0/0.
+40.	Label the server (172.16.1.100), then go to its desktop tab and click on IP Configuration. In the IP Address textbox type (172.16.1.100), in the Subnet Mask textbox type (255.255.0.0) and in the Default Gateway textbox type (172.16.0.1).  Close this window. 
+41.	Click on the second router and select the config tab. 
+42.	Click on the FastEthernet0/0. In the IP Address textbox type (172.16.0.1); in the Subnet Mask textbox type (255.255.0.0); turn the Port Status on and close this window.
+43. Click on the server, go to the Command Prompt and type `ping 172.16.0.1` and hit `enter`.  Again, you should see 4 packets sent and received (i.e. no losses).  Now type `ipconfig` and hit `enter` - you should see the IPv6 address, IP address, Subnet Mask and Default Gateway.  Close the window. 
+44.	Click on the first router, go the Config tab and click on the Static tab under Routing.
+45.	Type in the Network textbox (172.16.0.0), in the Mask textbox type (255.255.0.0) and in the Next Hop textbox type (10.0.0.2).  Now click Add and close this window.
+46.	Click on the second router and on the Config tab click Static (under the Routing tab). 
+47.	In the Network textbox type (192.168.1.0); in the Mask textbox type (255.255.255.0); in the Next Hop textbox type (10.0.0.1); then click Add and close this window.
+48.	Click on the first PC and go to the Command Prompt and type `ping 172.16.1.100` and press `enter`.  You should see 4 packets sent and received.  Close this window.
+49.	Click on the second router and go to the Config tab and to the Static tab under Routing.  In the Network tab textbox type (192.168.5.0) and in the Mask textbox type (255.255.255.0) and in the Next Hop textbox type (10.0.0.1). Click Add and close this window. 
+50.	Click on the second PC and open Command Prompt. Type `ping 172.16.1.100` and press `enter`. Again, 4 packets successfully sent and received. Your network is up and running!
 
 
 ## Exercise 2: Testing IoT house
