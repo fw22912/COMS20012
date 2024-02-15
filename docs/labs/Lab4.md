@@ -68,6 +68,7 @@ A website should appear on the Branch PC’s web browser which was sent by the B
 
 1.	In the Web Browser on the Branch PC, type _head.office.server_ 
 2.	Press Enter on your keyboard or click the Go button on screen. 
+![image](https://github.com/fw22912/COMS20012/assets/146180764/dbe2c2dd-ae6c-406b-9466-29690206c5c8)
 
 
 At the moment you pressed Enter or Go, the Branch PC sent data through the routers and the Internet to the Head Office Server, which represented a request for a web page. In response, the data which formed the web page was sent back to the Branch PC from the server, where it was displayed on screen.  Close the Branch PC window.
@@ -83,10 +84,11 @@ To make this possible, the firewall on the Branch Router will allow any data tra
 2.	Click the Desktop tab and then click Web Browser. 
 3.	Type _branch.server_ into the box next to URL and press Enter or click Go. You should be able to see the website on the Branch Server. 
 4.	Now type _iot.devices_ in to the box next to URL and press Enter or click Go. 
-5.	Login using the username _devices_ and the password _vB82parsnip!_ 
-6.	Open the Water Drain. 
-7.	Turn on the Light. 
-8.	Close the Laptop window. 
+5.	Login using the username _devices_ and the password _vB82parsnip!_
+   ![image](https://github.com/fw22912/COMS20012/assets/146180764/b209b024-9206-4b14-b357-070bd4e1e71f)
+7.	Open the Water Drain. 
+8.	Turn on the Light. 
+9.	Close the Laptop window. 
 
 
 ## Attempt Access from the Attacker’s PC 
