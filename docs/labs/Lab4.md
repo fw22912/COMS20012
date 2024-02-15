@@ -96,15 +96,20 @@ To make this possible, the firewall on the Branch Router will allow any data tra
 We will assume an [ attacker ](https://www.u-blox.com/en/blogs/insights/iot-device-security-man-in-middle#:~:text=A%20man%2Din%2Dthe%2Dmiddle%20attack%20occurs%20when%20a,network%20or%20send%20malicious%20data.) would like to gain access to the Branch network to access data on the Branch Server and control the IoT devices to cause harm to the business. 
 1.	Click the Attacker’s PC to open a window. 
 2.	Click the Desktop tab and click Web Browser. 
-3.	Try typing _branch.server_ in the box next to URL, then press Enter or click Go. 
+3.	Try typing _branch.server_ in the box next to URL, then press Enter or click Go.
+
+![image](https://github.com/fw22912/COMS20012/assets/146180764/ffae5cfe-e246-4647-b2f9-8713389b7103)
 
 Nothing may happen for a second or so as the PC tries to connect, but then you will see a message in the browser, "Host Name Unresolved". When a website address is typed into a browser, the DNS (Domain Name System) on your computer will check an index which matches hostnames to IP addresses. This is to make it easier than remembering and typing IP addresses to find websites. The hostnames we have been using so far in this activity (e.g. _iot.devices_) are using a DNS that is local to the company networks which the attacker cannot access. 
 
 **_Question: What is DNS and what is it used for?_**  Hint: Go back to lecture 3!
+--> It maps the domain name to a specific IP address.
 
 Let's assume the attacker already knows the actual IP address of the Branch Server: 
 
-4.	Repeating step 3, try typing the IP address of Branch Server `192.168.3.5` in the box next to URL, then press Enter or click Go. 
+4.	Repeating step 3, try typing the IP address of Branch Server `192.168.3.5` in the box next to URL, then press Enter or click Go.
+![image](https://github.com/fw22912/COMS20012/assets/146180764/0389b35c-b69c-4c11-ac8d-3b963486339e)
+
 After a few seconds you will see a message in the browser, "Request Timeout". In this case, the routers were able to use their routing tables to send the request for a web page towards the correct network, but the packets were dropped upon reaching the Branch Router. They were dropped, or ignored, because the source IP address of the packet was the Attacker’s PC, and did not match any firewall rules allowing access. 
 
 
@@ -113,25 +118,36 @@ After a few seconds you will see a message in the browser, "Request Timeout". In
 
 As we said in the lectures, you cannot protect or attack a system or network that you do not know! To be able to penetrate into the system/network, you need to get familiar with it! 
 
-The attacker is aware that there is communication between the company’s Head Office and the Branch and would like to view some of these packets to learn which IP addresses are being used. One way this could be achieved is by sending an email to a company staff member using an email address listed on their public website. The email would appear to be genuine, but actually contained a malicious attachment which installed spyware on the staff member’s computer. This spyware then records traffic sent from the laptop computer in Head Office and secretly emails all the details to the attacker. Attempting to attack by tricking someone to installing spyware or malware on their own computer is known as phishing. 
+The attacker is aware that there is communication between the company’s Head Office and the Branch and would like to view some of these packets to learn which IP addresses are being used. One way this could be achieved is by sending an email to a company staff member using an email address listed on their public website. The email would appear to be genuine, but actually contained a malicious attachment which installed spyware on the staff member’s computer. This spyware then records traffic sent from the laptop computer in Head Office and secretly emails all the details to the attacker. Attempting to attack by tricking someone to installing spyware or malware on their own computer is known as <b>phishing</b>. 
 The Sniffer, which can be seen in the red section of the simulation workspace, is a device which will represent spyware for this Packet Tracer simulation by recording network traffic details within the head office. 
 1.	Click the Sniffer. A window will open. 
-2.	Click the GUI tab (Graphical User Interface). 
+2.	Click the GUI tab (Graphical User Interface).
+   ![image](https://github.com/fw22912/COMS20012/assets/146180764/55c0e98c-d888-4f9e-9618-42bbd67e8577)
 3.	Maximize the window on your computer screen so you can see all details. 
 You will see a number of HTTP packets listed in a column on the left of the window which were recorded during your earlier activity. The ones at the bottom of the list should be the most recent, which were generated when accessing the IoT Device Registration Server from the laptop in the head office. 
 
 **_Question: In the world of networking, what is a sniffer? Did we talk about that in the lecture? Which one_**?
+--> packet sniffing
 
-4.	In the Sniffer window, click the last HTTP packet (at the bottom of the list) and look at its contents as they appear in the section on the right. 
+4.	In the Sniffer window, click the last HTTP packet (at the bottom of the list) and look at its contents as they appear in the section on the right.
+   ![image](https://github.com/fw22912/COMS20012/assets/146180764/b48473ef-a58a-40e6-9713-4a8ac7fb84e1)
+
 This shows you some details of the packet contents in the form of an upsidedown TCP/IP model (Physical or Network Access layer at the top) . You may need to scroll down to see all details.
+![image](https://github.com/fw22912/COMS20012/assets/146180764/81b97846-35a9-4dfe-a399-9f484ef7f2a1)
+
   
-•	The Ethernet II section includes the source and destination MAC addresses, seen as twelve hexadecimal figures and labelled as SRC ADDR and DEST ADDR.  
+•	The Ethernet II section includes the source and destination MAC addresses, seen as twelve hexadecimal figures and labelled as SRC ADDR and DEST ADDR. 
+![image](https://github.com/fw22912/COMS20012/assets/146180764/24d268e9-0713-43f0-af63-5452683fcf1a)
+
 
 •	The IP section includes the source and destination IPv4 addresses, seen as decimal numbers and labelled as SRC IP and DST IP.  
+![image](https://github.com/fw22912/COMS20012/assets/146180764/a105d9e5-3b6d-43d3-91c1-cf205b75430f)
 
 •	The TCP section shows the source and destination ports labelled as SOURCE PORT and DESTINATION PORT.  
+![image](https://github.com/fw22912/COMS20012/assets/146180764/493f0582-a277-466e-acdb-f327c48c5694)
 
 •	The HTTP section is show in the application layer, which in this case is the HTTP data request instructions relating to the IoT devices.  
+![image](https://github.com/fw22912/COMS20012/assets/146180764/4e0bf2dc-f6ad-45a2-8830-533c640eee7a)
 
 If the previous steps were done in the order of these instructions, you should see that the destination IP (DST IP) of the packet is `192.168.3.100` and the source IP (SRC IP) of the packet is `10.1.1.3`. 
 This tells us that the most recent packet that was sent from Head Office (which turned on the Light in the branch office) was sent from an IP address of `10.1.1.3`.
