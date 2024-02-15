@@ -59,6 +59,8 @@ A website should appear on the Branch PC’s web browser which was sent by the B
     ![image](https://github.com/fw22912/COMS20012/assets/146180764/88caf96f-a090-4c84-9096-f52ddedf4a87)
 
 19.	Set both the Auto Cool Temperature and Auto Heat Temperature to 18.0 (you will need to click Set for each after typing 18.0 and _might_ need to set the Auto Heat first). Notice the red indicator lights on the heating and cooling as the thermostat attempts to maintain the fluctuating temperature. Close the Branch PC's window.
+    ![image](https://github.com/fw22912/COMS20012/assets/146180764/833c8011-6a4b-4921-8588-2750fb63db4f)
+
 
 ## Access the Head Office Server via the Internet  
 
