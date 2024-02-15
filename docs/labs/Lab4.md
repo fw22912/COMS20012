@@ -40,18 +40,19 @@ The red section contains an attacker’s equipment, which could be located anywh
 
 1.	Click on the Branch PC. A window will open on your screen representing the PC. 
 2.	Click on the Desktop tab and click on Web Browser (you might need to enlarge the window). 
-3.	Click in the box next to URL and type _branch.server_ 
-4.	Press Enter on your keyboard or click the Go button on screen. 
+3.	Click in the box next to URL and type _branch.server_
+   ![image](https://github.com/fw22912/COMS20012/assets/146180764/218c54ac-e555-4460-828f-75924b0257c0)
+5.	Press Enter on your keyboard or click the Go button on screen. 
 A website should appear on the Branch PC’s web browser which was sent by the Branch Server. You can click on the links on the page and see that there are (mock-up) sensitive details that could harm the business’s reputation, cause legal problems or otherwise cost money if accessed by an attacker. 
-5. Click in the URL box of the web browser and replace the current URL with _iot.devices_ 
-6. Press Enter on your keyboard or click the Go button on screen. 
-7. In the web page that appears, enter the following login details: Username is _devices_, password is _vB82parsnip!_ (including the exclamation mark). 
-8.	Click the Fire Sprinkler line. It will drop down to show you the status of the sprinkler, represented by a red or green rectangle. 
-9.	Click the red rectangle so that it changes to green, indicating a change in status. This is how the IoT devices can be manually activated via a website. Notice the change to the picture of the sprinkler in the main workspace. 
-10.	Click again to turn the Fire Sprinkler off. 
-11.	Still in the web page on the Branch PC, click the Thermostat section. The status and options for the thermostat should appear. 
-12.	Click Auto, so that the thermostat regulates the temperature. 
-13.	Set both the Auto Cool Temperature and Auto Heat Temperature to 18.0 (you will need to click Set for each after typing 18.0 and _might_ need to set the Auto Heat first). Notice the red indicator lights on the heating and cooling as the thermostat attempts to maintain the fluctuating temperature. Close the Branch PC's window.
+6. Click in the URL box of the web browser and replace the current URL with _iot.devices_ 
+7. Press Enter on your keyboard or click the Go button on screen. 
+8. In the web page that appears, enter the following login details: Username is _devices_, password is _vB82parsnip!_ (including the exclamation mark). 
+9.	Click the Fire Sprinkler line. It will drop down to show you the status of the sprinkler, represented by a red or green rectangle. 
+10.	Click the red rectangle so that it changes to green, indicating a change in status. This is how the IoT devices can be manually activated via a website. Notice the change to the picture of the sprinkler in the main workspace. 
+11.	Click again to turn the Fire Sprinkler off. 
+12.	Still in the web page on the Branch PC, click the Thermostat section. The status and options for the thermostat should appear. 
+13.	Click Auto, so that the thermostat regulates the temperature. 
+14.	Set both the Auto Cool Temperature and Auto Heat Temperature to 18.0 (you will need to click Set for each after typing 18.0 and _might_ need to set the Auto Heat first). Notice the red indicator lights on the heating and cooling as the thermostat attempts to maintain the fluctuating temperature. Close the Branch PC's window.
 
 ## Access the Head Office Server via the Internet  
 
