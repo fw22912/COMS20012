@@ -151,9 +151,11 @@ This shows you some details of the packet contents in the form of an upsidedown 
 
 If the previous steps were done in the order of these instructions, you should see that the destination IP (DST IP) of the packet is `192.168.3.100` and the source IP (SRC IP) of the packet is `10.1.1.3`. 
 This tells us that the most recent packet that was sent from Head Office (which turned on the Light in the branch office) was sent from an IP address of `10.1.1.3`.
+![image](https://github.com/fw22912/COMS20012/assets/146180764/3f0c2ce1-6927-43ac-8a8f-e5a62637d5c0)
+
 
 **_Question: Can you give three examples of popular application layer protocols with well-known TCP port numbers?_**  
-
+--> DNS, HTTP, HTTPS
 
 ### Send from a Spoofed Source IP Address 
 
@@ -167,30 +169,39 @@ We will simulate this by modifying the configuration of the attacker’s equipme
 5.	Change the Default Gateway to `10.1.1.5` 
 6.	Close the Attacker’s PC window. 
 The Attacker’s Router would also need to be reconfigured to suit. Rather than doing this using the router’s command line configuration, which is outside the scope of this course, a replacement router is available which has already had its own IP address changed from `192.168.0.1` to `10.1.1.5` 
-7.	Move the Replacement Router so it is alongside the Attacker’s Router 
-8.	Click the green flashing light at the end of the cable below the Attacker’s Router, drag it to the Replacement Router and release. If you instead receive a pop-up warning when trying to click then you are clicking the wrong place and should try again. A menu will pop up showing the available ports; choose GigabitEthernet0/0 
+7.	Move the Replacement Router so it is alongside the Attacker’s Router
+   ![image](https://github.com/fw22912/COMS20012/assets/146180764/d3cc8387-7c6e-4210-8b7b-9949977c446b)
+9.	Click the green flashing light at the end of the cable below the Attacker’s Router, drag it to the Replacement Router and release. If you instead receive a pop-up warning when trying to click then you are clicking the wrong place and should try again. A menu will pop up showing the available ports; choose GigabitEthernet0/0 
 10.	Click the green flashing light at the end of the cable above the Attacker’s Router, drag it to the Replacement Router and release. A menu will pop up showing the available ports; choose GigabitEthernet0/1
 11.	After a short pause all the triangles should turn back to Green.
+    ![image](https://github.com/fw22912/COMS20012/assets/146180764/b249d99c-cf82-4ccd-8b8f-a58d4522a00f)
+
 
 **_Qestion: What is Spoofing?_** 
-
+--> snatching
 
 ### Gain Access through the [Firewall](https://www.simplilearn.com/tutorials/cyber-security-tutorial/what-is-firewall)
 1.	Click the Attacker’s PC to open a window. 
 2.	From the Desktop tab, open the Web Browser. 
 3.	Type the IP address of the Branch Server, which is `192.168.3.5` and press `Enter` or click `Go`. 
-You should now see the web pages on the Branch Server. The attacker also has access to the IoT Device Registration Server. 
+You should now see the web pages on the Branch Server. The attacker also has access to the IoT Device Registration Server.
+![image](https://github.com/fw22912/COMS20012/assets/146180764/d33acead-0350-4f22-b8f0-a790d73510ce)
 4.	Type the IP address of the Registration Server, which is `192.168.3.100` and press `Enter` or click `Go`. 
+![image](https://github.com/fw22912/COMS20012/assets/146180764/a6f7c749-324b-4172-bf21-793b01fcc8df)
+
 
 The IoT Device Registration Server has another level of protection. Even though an attacker has been able to access the network, they would still require a username and password to gain control. This is why the strength of the password is important, so that it cannot easily be guessed. Other security measures, such as temporary lockouts after a number of incorrect attempts and the use of multifactor authentication would also help to prevent access to the IoT controls. Even without being able to crack the password and control IoT devices, an attacker could still cause harm to the server from inside the network, such as creating a DoS (denial of service) attack. 
 
 It may also be possible for someone to determine the username and password by “sniffing” and examining the traffic that passes when others log in. These web pages are using the HTTP protocol and, therefore, any passwords are visible data (or plaintext). Using a properly encrypted HTTPS (secure HTTP) website would prevent this. 
 
-5.	Assume the attacker has discovered the password. Type the username _devices_ and the password _vB82parsnip!_ to sign in to the registration server. 
+5.	Assume the attacker has discovered the password. Type the username _devices_ and the password _vB82parsnip!_ to sign in to the registration server.
+   ![image](https://github.com/fw22912/COMS20012/assets/146180764/240308df-15ce-43bd-91b3-76fcb4933c41)
 6.	Click the Webcam option in the list of devices and click the red rectangle to activate the webcam. 
 7.	Click the Light option and turn it off. 
 8.	Click the Thermostat and turn it off. 
-9.	Close the Water Drain and turn on the Fire Sprinkler. 
+9.	Close the Water Drain and turn on the Fire Sprinkler.
+   ![image](https://github.com/fw22912/COMS20012/assets/146180764/67151b7c-4704-4da4-9500-99bd176573c4)
+
 
 
 This demonstrates some of the security implications of having IoT devices connected to the Internet. If an attacker can gain access, they could potentially view inside secure areas with a webcam, create a nuisance or hazard by turning lights off, damage temperature-controlled equipment by disabling air-conditioning or even flood a building. 
