@@ -23,13 +23,14 @@
 - Accountability: Identifying the individual responsible for the excessive download requesets is crucial.
    
 5. Give an example of the false sense of security that can come from using the “security by obscurity” approach.
-- **ANS A.5:** using a encryption scheme that is not public, thinking that no one will break it if they don't know about. Anothe example is hard coded secrets in the binary thinking that no one will know about them.
-- **security by obscurity:** term used to describe a security approach that relies on keeping information or mechanisms secret as a means of protecting a system or data.
-
+- **ANS A.5:** using a encryption scheme that is not public, thinking that no one will break it if they don't know about. Another example is hard coded secrets in the binary thinking that no one will know about them.
+- **security by obscurity:** a security method that is used bsed on the assumption that the attackers would not know certain type of information or data. Since this is used based on an asusmption, it is a risky way of securing things.
   
 6. The HF Corporation has a new refrigerator, the Monitator, which has a camera that takes a picture of the contents of the refrigerator and uploads it to the HF Corporation’s web site. The Monitator’s owner can then access this web site to see what is inside their refrigerator without opening the door. For security reasons, the HF Corporation encrypts this picture using a proprietary algorithm and gives the 4-digit PIN to decrypt this picture to the Monitator’s owner, so he or she can get access to the pictures of their Monitator’s interior. What are the security concerns and principles that this solution does and doesn’t support?
   
-- **ANS A.6:** It is simple desigin, thus *economy of mechanism* prnciple is followed. However, proprietary encryption shceme is a bad idea (*Open design* principle). Protecting it with a PIN is good (confidentiality and Assurance). However, 4-digit PIN may be a weak protection.
+- **ANS A.6:** It is simple desigin, thus *economy of mechanism* prnciple is followed. However, proprietary encryption shceme is a bad idea (*Open design* principle). Protecting it with a PIN is good (confidentiality and Assurance). However, 4-digit PIN may be a weak protection. <br>
+- **ecomony of mechanism:** a principle in computer security and system design which is to keep the design of security mechanisms as simple and straightforward as possible(should not be overly complex).<br>
+- **proprietary encryption scheme:** an encryption method or algorithm that is privately owned, developed, and controlled by a specific entity(especially company or organisation). kept secret, details not publicly disclosed.
 
 
 7. Consider a desktop publishing system used to produce documents for various organizations.
