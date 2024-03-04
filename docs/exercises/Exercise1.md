@@ -33,12 +33,12 @@
 
 
 7. Consider a desktop publishing system used to produce documents for various organizations.
-a. Give an example of a type of publication for which confidentiality of the stored data is the most important requirement.
-b. Give an example of a type of publication in which data integrity is the most impor- tant requirement.
-c. Give an example in which system availability is the most important requirement.
+  + a. Give an example of a type of publication for which confidentiality of the stored data is the most important requirement.
+  + b. Give an example of a type of publication in which data integrity is the most impor- tant requirement.
+  + c. Give an example in which system availability is the most important requirement.
 
-- **ANS A.7:** a. The system will have to assure confidentiality if it is being used to publish corporate proprietary material.
-b. The system will have to assure integrity if it is being used to laws or regulations.
+- **ANS A.7:**<br> a. The system will have to assure confidentiality if it is being used to publish corporate proprietary material. <br>
+b. The system will have to assure integrity if it is being used to laws or regulations.<br>
 c. The system will have to assure availability if it is being used to publish a daily paper.
 
 
