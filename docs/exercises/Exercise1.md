@@ -18,15 +18,28 @@
 
   
 4. With respect to the C.I.A. and A.A.A. concepts, what risks are posed by someone making so many download requests from an online music store that it prevents other users from being able to download any songs?
-	
+- **ANS A.4:** CIA- availability, AAA- Accountability.
+- Availability: the excessive download requests lead to a denial of service for other uses, making the service unavailable or significantly degrading its performance.
+- Accountability: Identifying the individual responsible for the excessive download requesets is crucial.
+   
 5. Give an example of the false sense of security that can come from using the “security by obscurity” approach.
+- **ANS A.5:** using a encryption scheme that is not public, thinking that no one will break it if they don't know about. Anothe example is hard coded secrets in the binary thinking that no one will know about them.
+- **security by obscurity:** term used to describe a security approach that relies on keeping information or mechanisms secret as a means of protecting a system or data.
 
+  
 6. The HF Corporation has a new refrigerator, the Monitator, which has a camera that takes a picture of the contents of the refrigerator and uploads it to the HF Corporation’s web site. The Monitator’s owner can then access this web site to see what is inside their refrigerator without opening the door. For security reasons, the HF Corporation encrypts this picture using a proprietary algorithm and gives the 4-digit PIN to decrypt this picture to the Monitator’s owner, so he or she can get access to the pictures of their Monitator’s interior. What are the security concerns and principles that this solution does and doesn’t support?
+  
+- **ANS A.6:** It is simple desigin, thus *economy of mechanism* prnciple is followed. However, proprietary encryption shceme is a bad idea (*Open design* principle). Protecting it with a PIN is good (confidentiality and Assurance). However, 4-digit PIN may be a weak protection.
+
+
 7. Consider a desktop publishing system used to produce documents for various organizations.
 a. Give an example of a type of publication for which confidentiality of the stored data is the most important requirement.
 b. Give an example of a type of publication in which data integrity is the most impor- tant requirement.
 c. Give an example in which system availability is the most important requirement.
-
+/n
+- **ANS A.7:** a. The system will have to assure confidentiality if it is being used to publish corporate proprietary material.
+b. The system will have to assure integrity if it is being used to laws or regulations.
+c. The system will have to assure availability if it is being used to publish a daily paper.
 8. For each of the following assets, assign a low, moderate, or high impact level for the loss of confidentiality, availability, and integrity, respectively. Justify your answers. 
 a. An organization managing public information on its Web server.
 b. A law enforcement organization managing extremely sensitive investigative information.
@@ -38,12 +51,10 @@ e. A power plant contains a SCADA (supervisory control and data acquisition) sys
 ## Answers
 
 
-- **ANS A.4:** CIA- availability, AAA- Accountability.
-- **ANS A.5:** using a encryption scheme that is not public, thinking that no one will break it if they don't know about. Anothe example is hard coded secrets in the binary thinking that no one will know about them.
-- **ANS A.6:** It is simple desigin, thus *economy of mechanism* prnciple is followed. However, proprietary encryption shceme is a bad idea (*Open design* principle). Protecting it with a PIN is good (confidentiality and Assurance). However, 4-digit PIN may be a weak protection.
-- **ANS A.7:** a. The system will have to assure confidentiality if it is being used to publish corporate proprietary material.
-b. The system will have to assure integrity if it is being used to laws or regulations.
-c. The system will have to assure availability if it is being used to publish a daily paper.
+
+
+
+
 - **ANS A.8:** a. An organization managing public information on its web server determines that there is no potential impact from a loss of confidentiality (i.e., confidentiality requirements are not applicable), a moderate potential impact from a loss of integrity, and a moderate potential impact from a loss of availability.
 b. A law enforcement organization managing extremely sensitive investigative information determines that the potential impact from a loss of confidentiality is high, the potential impact from a loss of integrity is moderate, and the potential impact from a loss of availability is moderate.
 c. A financial organization managing routine administrative information (not privacy-related information) determines that the potential impact from a loss of confidentiality is low, the potential impact from a loss of integrity is low, and the potential impact from a loss of availability is low.
