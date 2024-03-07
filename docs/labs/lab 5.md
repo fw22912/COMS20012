@@ -96,8 +96,7 @@ Compile the given c code (call-convention.c) with the following commands. [Note:
 4. Look out for the disassembly of main
 5. Observe the parameter passing just before the call <func>                                                                         ![Screenshot from 2024-03-07 16-55-20](https://github.com/fw22912/COMS20012/assets/146180764/1193da70-bcfa-4bca-8f34-2647e1a5cd10)
 
-6. Look out for![Screenshot from 2024-03-07 16-55-20](https://github.com/fw22912/COMS20012/assets/146180764/fbe7fb8c-e33c-41dd-80f5-1d0714cbe7a1)
- the disassembly of func
+6. Look out for the disassembly of func
 7. Observe how those parameters (arguments) are used.
 
 ![Screenshot from 2024-03-07 16-54-35](https://github.com/fw22912/COMS20012/assets/146180764/a299660d-4224-4be8-abd8-bf281b8f19ad)
@@ -114,25 +113,41 @@ Repeat the above steps for call-conv64.
 1. Copy c code [memory_layout.c](https://github.com/cs-uob/COMS20012/blob/master/docs/code/memory_layout.c)) in your seclab directory (so that it is accessible in /vagrant directory of your VM).
 2. run `vagrant up` to start you VM.Do not forget to ssh your VM.
 3. compile `gcc memory_layout.c -o memory_layout`
-4. run the resulting binary. It will halt with a message "Press any key...."
+4. run the resulting binary. It will halt with a message "Press any key...."                                                          ![Screenshot from 2024-03-07 17-00-52](https://github.com/fw22912/COMS20012/assets/146180764/679cd625-f425-4128-9a8f-c35de683caac)
+
 5. On a different terminal (lets call it TermB, and the already runing terminal as TermA), run `ps -e |grep memory_layout`. Note the PID (PID is the process ID that is returned from the command).
 6. On TermB, run `gdb -p PID`. GDB will be attached to the running process on TermA. You will be in GDB shell. Now on enter commands within gdb shell. NOTE: if GDB does not attach, run: `echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope`
+
+![Screenshot from 2024-03-07 17-14-04](https://github.com/fw22912/COMS20012/assets/146180764/3552ac76-853c-4015-9d72-546d173eca27)
 ```
 (gdb) disassem main
 (gdb) b *main+N \\(instruction where it is going to call func1, use N as per your runtime, which should be around 412)
+```
+![Screenshot from 2024-03-07 17-20-06](https://github.com/fw22912/COMS20012/assets/146180764/c67245bf-a7d1-4c8a-a4aa-536136ed5ea8)
+```
 (gdb) disassem func1
 (gdb) b *func1+N \\(instruction after the last call to printf, use N as per your runtime, which should be around 118)
+```
+![Screenshot from 2024-03-07 17-20-58](https://github.com/fw22912/COMS20012/assets/146180764/72676364-d046-428f-83a5-715a5cc359f2)
 
+```
 (gdb) disassem func2
 (gdb) b *func2+N \\(instruction where it is going to call func3, use N as per your runtime, which should be around 166)
+```
+![Screenshot from 2024-03-07 17-21-29](https://github.com/fw22912/COMS20012/assets/146180764/66375c55-b126-42a2-997c-8f125d270ab4)
+
+```
 
 (gdb) disassem func3
 (gdb) b *func3+N \\(instruction after the last call to printf, use N as per your runtime, which should be around 279)
 (gdb) c  
 ```
-7. On Term A, press Enter to continue. The prog prints frame address of main. how will you find that address in the gdb window?
-8. When in func1, it prints return address. Can you check which instruction address in that in the main (`disassem main`)?
-9. On each breakpoint, verify the frame addresses of the functions as you did above.
+![Screenshot from 2024-03-07 17-23-03](https://github.com/fw22912/COMS20012/assets/146180764/29947434-ee06-4110-a915-b2c57d9a51a4)
+                                                                     
+7. On Term A, press Enter to continue. The prog prints frame address of main. how will you find that address in the gdb window?      ![Screenshot from 2024-03-07 17-24-01](https://github.com/fw22912/COMS20012/assets/146180764/0b137d51-a381-41f9-a044-4fb49b2b3b77)
+
+8. When in func1, it prints return address. Can you check which instruction address in that in the main (`disassem main`)?                 
+9. On each breakpoint, verify the frame addresses of the functions as you did above.                                                   
 10. At one point, you will see "Frame addr of caller of func2 (1)". Can you find which function we are talking about as a caller to func2?
 11. In the end (your last "continue" on the GDB), you will see  
 ```
