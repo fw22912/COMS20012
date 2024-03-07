@@ -144,7 +144,7 @@ Repeat the above steps for call-conv64.
 ```
 ![Screenshot from 2024-03-07 17-23-03](https://github.com/fw22912/COMS20012/assets/146180764/29947434-ee06-4110-a915-b2c57d9a51a4)
                                                                      
-7. On Term A, press Enter to continue. The prog prints frame address of main. how will you find that address in the gdb window?      ![Screenshot from 2024-03-07 17-24-01](https://github.com/fw22912/COMS20012/assets/146180764/0b137d51-a381-41f9-a044-4fb49b2b3b77)
+7. On Term A, press Enter to continue. The prog prints frame address of main. how will you find that address in the gdb window?                                                                                                                                ![Screenshot from 2024-03-07 17-24-01](https://github.com/fw22912/COMS20012/assets/146180764/0b137d51-a381-41f9-a044-4fb49b2b3b77)
 
 8. When in func1, it prints return address. Can you check which instruction address in that in the main (`disassem main`)?                 
 9. On each breakpoint, verify the frame addresses of the functions as you did above.                                                   
