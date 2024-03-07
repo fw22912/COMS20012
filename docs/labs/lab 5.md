@@ -61,9 +61,16 @@ then you run
 
 ```b main```
 
+![Screenshot from 2024-03-07 16-22-19](https://github.com/fw22912/COMS20012/assets/146180764/77ae7333-d60a-4b6c-8a88-859a0e66c962)
+
+
 ```run```
 
+![Screenshot from 2024-03-07 16-24-46](https://github.com/fw22912/COMS20012/assets/146180764/fe80bc72-c6a2-450d-af5e-e1918c5db07c)
+
 ```disassemble main```
+![Screenshot from 2024-03-07 16-25-22](https://github.com/fw22912/COMS20012/assets/146180764/f09fa21a-4612-4645-9730-fc9b81fbf6a4)
+
 
 - C. At this stage, all the panes will have some values. The top most pane gives you values to all the register. The middle pane shows the assembly code being executed. And the botton pane is for the GDB commandline. You can note the value of `RIP` and the address of the current highlighted line! In the pane C, each line starts with anl address, followed by the relative position marker and the instruction.
 - D. The execution will halt at the entry of main function, bacause you set a breakpoint at the `main` (`b main`). Breakpoints can be set either by using the `b *address` OR `b *main+N`. Breakpoints are very useful when you want to analyse the values of register and memory.
