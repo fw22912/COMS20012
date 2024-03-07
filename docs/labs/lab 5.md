@@ -192,6 +192,8 @@ nasm -f elf64 -o hello64.o hello64.S
 ld -o hello64 hello64.o
 ./hello64
 ```
+![Screenshot from 2024-03-07 17-31-12](https://github.com/fw22912/COMS20012/assets/146180764/1bf9d11a-df2c-41fc-bee7-aad4459a9d5b)
+
 
 #### Question 1
 
@@ -199,10 +201,16 @@ Comment every line of `hello64.S` and describe what each line does.
 Focus on the *indented lines* to begin with.
 
 - What is a `syscall`?
+  : system call(syscall) is a programmatic way in which a computer program requests a service from the operating system on which it is executed.
 - What is `mov`?
+  : move(mov) instruction copies the data item referred to by its second operand into the location referred to by its first operand.
 - What are all those magic numbers?
 - What is `rax`, `rdi`, `rsi` and `rdx` and why are things being moved
   into them?
+  + rax: register a extended
+  + rdi: register destination index (destination for data copies)
+  + rsi: register source index (source for data copies)
+  + rdx: register d extended 
 
 To help you, you need to refer to the following bits of documentation:
 
