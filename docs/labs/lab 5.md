@@ -292,6 +292,8 @@ ld -melf_i386 -o hello32 hello32.o
 ./hello32
 objdump -d hello32
 ```
+![Screenshot from 2024-03-07 17-46-21](https://github.com/fw22912/COMS20012/assets/146180764/129066c3-ab82-410f-a3c2-c7c51103c19e)
+
 
 #### Question 3
 
