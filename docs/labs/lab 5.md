@@ -201,9 +201,9 @@ Comment every line of `hello64.S` and describe what each line does.
 Focus on the *indented lines* to begin with.
 
 - What is a `syscall`?
-  : system call(syscall) is a programmatic way in which a computer program requests a service from the operating system on which it is executed.
+  + : system call(syscall) is a programmatic way in which a computer program requests a service from the operating system on which it is executed.
 - What is `mov`?
-  : move(mov) instruction copies the data item referred to by its second operand into the location referred to by its first operand.
+  + : move(mov) instruction copies the data item referred to by its second operand into the location referred to by its first operand.
 - What are all those magic numbers?
 - What is `rax`, `rdi`, `rsi` and `rdx` and why are things being moved
   into them?
@@ -227,6 +227,7 @@ Disassemble the binary you just made with:
 ``` shell
 objdump -d hello64
 ```
+![Screenshot from 2024-03-07 17-40-59](https://github.com/fw22912/COMS20012/assets/146180764/6b007f61-7afc-4a96-a5b7-49d6bf5782bd)
 
 Look at the output of the command. How does it relate to the code you
 just wrote? What about if you run:
@@ -234,6 +235,7 @@ just wrote? What about if you run:
 ``` shell
 objdump -D hello64
 ```
+![Screenshot from 2024-03-07 17-41-43](https://github.com/fw22912/COMS20012/assets/146180764/701c605a-b22e-4961-9906-426f2b6bf94b)
 
 #### NOTE
 
@@ -244,6 +246,7 @@ both. If it bothers you that much, try running:
 ``` shell
 objdump -Mintel -d hello64
 ```
+![Screenshot from 2024-03-07 17-42-25](https://github.com/fw22912/COMS20012/assets/146180764/12e29098-a843-4d31-b817-a2eaaec44830)
 
 Similar options are available for GDB and all the other tools you'll
 ever meet. If in doubt, use the `man` command.
@@ -256,6 +259,8 @@ same computer! The `hello64` program we wrote was for 64-bit Linux, but
 we can also run 32-bit Linux programs on a 64-bit system! Let rewrite
 the same *hello world* program for 32-bit Linux! Save the following into
 `hello32.S`:
+
+![Screenshot from 2024-03-07 17-44-53](https://github.com/fw22912/COMS20012/assets/146180764/43e83b85-f94a-4b85-af6a-ed44b827bf05)
 
 ``` asm
 ; hello64.S: a first step into assembly programming!
