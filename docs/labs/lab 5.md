@@ -52,9 +52,11 @@ then you run
 - B. This will take you to the gdb command promt (see the Fig. 2). In that command prompt, type [For intel syntax type ```set disassembly-flavor intel```]
 
 ```layout regs```
+
 ![Screenshot from 2024-03-07 16-17-07](https://github.com/fw22912/COMS20012/assets/146180764/2f1379bd-c10d-4de7-a788-bd4cbf2ea015)
 
 ```focus cmd```
+
 ![Screenshot from 2024-03-07 16-17-39](https://github.com/fw22912/COMS20012/assets/146180764/f602ed70-586f-4e82-bbbf-3bab8b5c49a4)
 
 ```b main```
