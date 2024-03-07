@@ -73,12 +73,18 @@ then you run
 ![Screenshot from 2024-03-07 16-25-22](https://github.com/fw22912/COMS20012/assets/146180764/f09fa21a-4612-4645-9730-fc9b81fbf6a4)
 
 
-- C. At this stage, all the panes will have some values. The top most pane gives you values to all the register. The middle pane shows the assembly code being executed. And the botton pane is for the GDB commandline. You can note the value of `RIP` and the address of the current highlighted line! In the pane C, each line starts with anl address, followed by the relative position marker and the instruction.
-- D. The execution will halt at the entry of main function, bacause you set a breakpoint at the `main` (`b main`). Breakpoints can be set either by using the `b *address` OR `b *main+N`. Breakpoints are very useful when you want to analyse the values of register and memory.
+- C. At this stage, all the panes will have some values. The top most pane gives you values to all the register. The middle pane shows the assembly code being executed. And the botton pane is for the GDB commandline. You can note the value of `RIP` and the address of the current highlighted line! In the pane C, each line starts with anl address, followed by the relative position marker and the instruction.              
+- D. The execution will halt at the entry of main function, bacause you set a breakpoint at the `main` (`b main`). Breakpoints can be set either by using the `b *address` OR `b *main+N`. Breakpoints are very useful when you want to analyse the values of register and memory.                                                                                                                                   
 Try setting a breakpoint at some later point, say `b *main+60` and then run.
 - E. The program will halt when it reaches main+60. Now you can read the value of register, either by looking in the Pane R or by typing GDB command: `info reg`
+
+  ![Screenshot from 2024-03-07 16-42-38](https://github.com/fw22912/COMS20012/assets/146180764/4ef2a9e4-c7bf-4613-8721-3e8aab161c30)
+
 - F. You can also read the memory content by
-```x/8xb $rbp-0x4``` (remember, rbp is the base point, which also points to the stack. In this case you will read 8 bytes starting from EBP-4. If you want to read entire stack, you can also use RSP. Use ni and si commands to observe how GDB executes next instruction. 
+```x/8xb $rbp-0x4``` (remember, rbp is the base point, which also points to the stack. In this case you will read 8 bytes starting from EBP-4. If you want to read entire stack, you can also use RSP. Use ni and si commands to observe how GDB executes next instruction.
+
+![Screenshot from 2024-03-07 16-45-45](https://github.com/fw22912/COMS20012/assets/146180764/b62f3c12-6f83-46be-930f-33dbe9140e27)
+
 - Try and get youself familiar with GDB (see the attached [GDB cheatsheet](https://github.com/cs-uob/COMS20012/blob/master/docs/materials/lecture1/GDBCheatSheet.pdf))!
 #### Exercise:
 Compile the given c code (call-convention.c) with the following commands. [Note: see the appendix A to make sure that your multi-arch compilation support is made available!] 
