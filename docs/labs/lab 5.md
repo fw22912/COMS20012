@@ -88,15 +88,18 @@ Try setting a breakpoint at some later point, say `b *main+60` and then run.
 - Try and get youself familiar with GDB (see the attached [GDB cheatsheet](https://github.com/cs-uob/COMS20012/blob/master/docs/materials/lecture1/GDBCheatSheet.pdf))!
 #### Exercise:
 Compile the given c code (call-convention.c) with the following commands. [Note: see the appendix A to make sure that your multi-arch compilation support is made available!] 
-1. ```gcc -m32 -o call-conv32 call-convention.c```
-2. ```gcc -o call-conv64 call-convention.c```
+1. ```gcc -m32 -o call-conv32 call-convention.c```                                                                                    ![Screenshot from 2024-03-07 16-47-49](https://github.com/fw22912/COMS20012/assets/146180764/0dfa1c4d-03a4-4732-a840-c59bc27ad5a9)
+
+2. ```gcc -o call-conv64 call-convention.c```                                                                                          
 - The above two steps will create two binary files, viz. call-conv32 and call-conv64. Check they exist by using the right command.
 3. Open `call-conv32 with objdump`
 4. Look out for the disassembly of main
 5. Observe the parameter passing just before the call <func>
 6. Look out for the disassembly of func
 7. Observe how those parameters (arguments) are used.
- 
+
+![Screenshot from 2024-03-07 16-54-35](https://github.com/fw22912/COMS20012/assets/146180764/a299660d-4224-4be8-abd8-bf281b8f19ad)
+
 
 Repeat the above steps for call-conv64.
 1. Open call-conv64 with objdump 
