@@ -94,8 +94,10 @@ Compile the given c code (call-convention.c) with the following commands. [Note:
 - The above two steps will create two binary files, viz. call-conv32 and call-conv64. Check they exist by using the right command.
 3. Open `call-conv32 with objdump`
 4. Look out for the disassembly of main
-5. Observe the parameter passing just before the call <func>
-6. Look out for the disassembly of func
+5. Observe the parameter passing just before the call <func>                                                                         ![Screenshot from 2024-03-07 16-55-20](https://github.com/fw22912/COMS20012/assets/146180764/1193da70-bcfa-4bca-8f34-2647e1a5cd10)
+
+6. Look out for![Screenshot from 2024-03-07 16-55-20](https://github.com/fw22912/COMS20012/assets/146180764/fbe7fb8c-e33c-41dd-80f5-1d0714cbe7a1)
+ the disassembly of func
 7. Observe how those parameters (arguments) are used.
 
 ![Screenshot from 2024-03-07 16-54-35](https://github.com/fw22912/COMS20012/assets/146180764/a299660d-4224-4be8-abd8-bf281b8f19ad)
