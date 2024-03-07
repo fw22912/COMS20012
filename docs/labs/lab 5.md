@@ -34,14 +34,15 @@ of any lab redownloading the VM images. If you have an X86-based Linux machine o
 
 1.	Compile the following c prog [call-convention.c](https://github.com/cs-uob/COMS20012/blob/master/docs/code/call-convention.c) by running 
 ```gcc -o call-conv64 call-convention.c```
-Check what ```gcc -g -o call-conv64 call-convention.c``` did? Comment on your findings.
+Check what ```gcc -g -o call-conv64 call-convention.c``` did? Comment on your findings.                                                        ![Screenshot from 2024-03-07 16-08-24](https://github.com/fw22912/COMS20012/assets/146180764/852f1010-8251-41c5-a0c8-0bb413031ee8)
+
  2. Objdump: As part of the compilation process, compile (GCC) converts the source code into the assembly instruction and then the assembler takes in assembly instructions and encodes them into the binary form understood by the hardware. Disassembly is the reverse process that converts binary-encoded instructions back into human-readable assembly. objdump is a tool that operates on object files (i.e. files containing compiled machine code).
 - A. Run ```objdump --help``` to see all the avaialble options.
 - B. Run the objdump as follows and then scroll upto the point when you see main.
 `objdump -d call-conv64`
 This extracts the instructions from the object file and outputs the sequence of binary-encoded machine instructions alongside the assembly equivalent. 
 If the object file was compiled with debugging information, adding the `-S` flag to objdump will intersperse the original C source. 
-Run `objdump -d -S call-conv64` to see the source code together with the assembly.
+Run `objdump -d -S call-conv64` to see the source code together with the assembly.                                                                                                                
 3. GDB:
 GDB stands for GNU Project Debugger and is a powerful debugging tool for C(along with other languages like C++). It helps you to monitor C programs while they are executing and also allows you to see what exactly happens when your program crashes. You can get the values of the registers and memory (e.g. stack). It allows you to set breakpoints at a certain point in your program execution. Though GDB is a commandline based program, you can, however, invoke its TUI (text user interface) to have separate windows displaying the values of registers, for example.
 - A. Run the GDB with the following command.
@@ -51,8 +52,10 @@ then you run
 - B. This will take you to the gdb command promt (see the Fig. 2). In that command prompt, type [For intel syntax type ```set disassembly-flavor intel```]
 
 ```layout regs```
+![Screenshot from 2024-03-07 16-17-07](https://github.com/fw22912/COMS20012/assets/146180764/2f1379bd-c10d-4de7-a788-bd4cbf2ea015)
 
 ```focus cmd```
+![Screenshot from 2024-03-07 16-17-39](https://github.com/fw22912/COMS20012/assets/146180764/f602ed70-586f-4e82-bbbf-3bab8b5c49a4)
 
 ```b main```
 
