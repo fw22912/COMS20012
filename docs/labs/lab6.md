@@ -76,6 +76,8 @@ You can use `run $(perl -e 'print "A"xSize, "Address"')`
 
 **Example** Let's assume Address is 0x0000555555554858. 
 
+![Screenshot from 2024-03-14 17-11-28](https://github.com/fw22912/COMS20012/assets/146180764/f86a09d8-0846-440d-88ae-a99e6c9281bd)
+
 Then you need to contruct the final input as `run $(perl -e 'print "A"xSize, "\x58\x48\x55\x55\x55\x55"')`. You can ignore the remaining zeros. Also notice that we used \x to so that these are not interpreted as ASCII symbols.
 
 
