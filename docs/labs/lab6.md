@@ -58,6 +58,7 @@ Let us now do this step by step:
  run `ps -e |grep bof`. Note the PID. The output will be similar to " 3006 pts/1    00:00:00 bof ". PID here is "30006"
  
  Then, run `gdb -p PID`. GDB will be attached to the running process on TerminalA. You will be in GDB shell. 
+![Screenshot from 2024-03-14 17-09-46](https://github.com/fw22912/COMS20012/assets/146180764/50a086d4-dce9-4339-b738-824caf2f8e2e)
 
 8. Use `disas admin` to get the entry address of the admin function.
 9. You should run the binary by using long input. You can use `run $(perl -e 'print "A"xSize')` where **Size** is the size of the input of your choice. If you choose **Size** to be equal to 50, it will print "A" 50 times as input.
