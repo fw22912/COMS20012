@@ -8,7 +8,7 @@ Lab Machines remotely. To do so follow [the online instructions](https://uob.sha
 
 If you experience any difficulties contact IT services.
 
-
+                                                                                                                                
 
 ## A. Format String Error
 
@@ -16,7 +16,8 @@ If you experience any difficulties contact IT services.
 1. Start your VM (same vagrant steps, but you don't have to install the VM. Just go to the directory where your Vagrantfile is and `vagrant up` followed by `vagrant ssh`. )
 2. In one pane, compile the program `gcc format.c -o format`
 3. Run the program `./format`
-4. It will ask to enter your name. Use `%x-%x-%x ...` as your name.
+4. It will ask to enter your name. Use `%x-%x-%x ...` as your name.                                                                                     ![Screenshot from 2024-03-14 16-50-21](https://github.com/fw22912/COMS20012/assets/146180764/349c4967-8d6c-4a9c-852c-5acaae547955)
+
 5. For each additional `%x`, you will see some hexadecimal number being printed. You need to try each of these additional numbers to see if this is the pin that will "authenticate" you. 
 
 Note: the numbers are printed in hex, but you need to enter pin in decimal. In order to convert the hex to decimal, use `echo $((0xhex_num))` in another terminal. To do so, on a different terminal (lets call it TermB, and the already runing terminal as TermA), run `vagrant ssh`. Use this TermB to convert the number from hex to decimal.
