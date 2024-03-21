@@ -187,6 +187,7 @@ Now let's try to play with configuration:
    ![Screenshot from 2024-03-21 16-45-43](https://github.com/fw22912/COMS20012/assets/146180764/aca3a388-1512-40a1-b1f2-fc0efae59b05)
 
 2. Try booting with 256K of memory. What happens?
+![Screenshot from 2024-03-21 16-48-23](https://github.com/fw22912/COMS20012/assets/146180764/8d9d5a83-b671-4768-9ea3-9b8a786c2a70)
 
 
 ## Exploring OS/161
@@ -330,9 +331,12 @@ contains the implementation of the simple file system.
 You may find standard UNIX utilities like `find` and `grep` useful when
 searching through your OS/161 source code.
 
-1. What function initializes the kernel during boot, and what subsystems are currently initialized?
-2. OS/161 has a system for printing debugging messages to the console. How does it work? How could it be useful?
+1. What function initializes the kernel during boot, and what subsystems are currently initialized?   kernel/main()
+2. OS/161 has a system for printing debugging messages to the console. How does it work? How could it be useful?   kprintf()
 3. What do copyin and copyout do? What is special about these functions compared to other approaches to copying memory in C, like [memmove](http://www.cplusplus.com/reference/cstring/memmove/)?
++ copyin: used to copy data from user space to kernel space. Takes three arguments(pointer to src buffer from user space, pointer to dst buffer from kernal space, size of data being copied). It verifies that the memory region specified by the src pointer is valid and accessible from user space. Then it copies the specified amount of data from user space to kernal space.
++ copyout: used to copy data from kernel space to user space. Takes three arguments(pointer to src buffer from kernel space, pointer to dst buffer from user space, size of data being copied) 
+
 
 ## Using GDB
 
