@@ -356,6 +356,9 @@ cd ~/os161/root/
 os161-gdb kernel
 ```
 
+![Screenshot from 2024-03-21 16-57-40](https://github.com/fw22912/COMS20012/assets/146180764/ed54a943-35a9-4fd1-bc43-32e0d13eaa90)
+
+
 Now in the GDB prompt type the following:
 ```
 target remote unix:.sockets/gdb
@@ -374,6 +377,8 @@ On your first terminal you should see the following message:
 ```
 sys161: New debugger connection
 ```
+![Screenshot from 2024-03-21 16-58-31](https://github.com/fw22912/COMS20012/assets/146180764/8593bca1-657c-4c98-8d7a-d3827ff8a47b)
+
 
 ### Trying GDB
 
@@ -398,12 +403,15 @@ Breakpoint 1, kmain (arguments=0x8002aea0 "") at ../../main/main.c:212
 213             boot();
 ```
 
+
 If you type `s` again, it should bring you to the first line of boot:
 ```
 (gdb) s
 boot () at ../../main/main.c:100
 100             kprintf("\n");
 ```
+![Screenshot from 2024-03-21 16-59-27](https://github.com/fw22912/COMS20012/assets/146180764/0406613c-d060-4cf9-b397-f0584b5fd762)
+
 
 You can step over this call with `n`:
 ```
@@ -413,6 +421,9 @@ You can step over this call with `n`:
 
 You can get the surrounding code with `list`:
 ```
+![Screenshot from 2024-03-21 17-00-15](https://github.com/fw22912/COMS20012/assets/146180764/5e427aa8-fb63-4875-b3ae-6251140a937b)
+
+
 (gdb) list
 96               * anything at all. You can make it larger though (it's in
 97               * dev/generic/console.c).
@@ -428,7 +439,7 @@ You can get the surrounding code with `list`:
 
 You'll notice that even though there are several calls to `kprintf` here, nothing actually comes out on the console. Single-step with n over the next few lines (first some `kprintf` calls, then calls for bootstrapping various kernel subsystems) until you get to `mainbus_bootstrap`.
 
-When you step over `mainbus_bootstrap`, suddenly all the console messages print out. This is because nothing can actually come out of the console until the kernel searches for and finds the console hardware; this happens inside `mainbus_bootstrap`. This is important to remember: if the kernel hangs or dies without printing anything, it does not mean that something inexplicably horrible happened before that first `kprintf`, it just means that something happened before the call to `mainbus_bootstrap`. You will be writing code that happens before there, so chances are this will happen to you at least once. One of the reasons GDB is important: tracking such problems down with GDB is pretty easy. Tracking them down without GDB, when you can't print anything out, is very hard.
+When you step over `mainbus_bootstrap`, suddenly all the console messages print out. This is because nothing can actually come out of the console until the kernel searches for and finds the console hardware; this happens inside `mainbus_bootstrap`. <b>This is important to remember: if the kernel hangs or dies without printing anything, it does not mean that something inexplicably horrible happened before that first `kprintf`, it just means that something happened before the call to `mainbus_bootstrap`.</b> You will be writing code that happens before there, so chances are this will happen to you at least once. One of the reasons GDB is important: tracking such problems down with GDB is pretty easy. Tracking them down without GDB, when you can't print anything out, is very hard.
 
 Now tell GDB to execute through to the end of boot with `finish`:
 ```
@@ -437,6 +448,9 @@ Run till exit from #0  boot () at ../../main/main.c:121
 kmain (arguments=0x8002aea0 "") at ../../main/main.c:215
 215             menu(arguments);
 ```
+
+![Screenshot from 2024-03-21 17-02-27](https://github.com/fw22912/COMS20012/assets/146180764/1bd5e935-334d-4f9c-ad21-7dc5b9cc571f)
+
 
 Add a breakpoint to `sys_reboot`:
 ```
@@ -455,6 +469,8 @@ the poweroff utility to shutdown the machine:
 ```
 OS/161 kernel [? for menu]: p /sbin/poweroff
 ```
+![Screenshot from 2024-03-21 17-03-02](https://github.com/fw22912/COMS20012/assets/146180764/0d73ad64-f12b-4f5f-bc6f-ada7fb7ed034)
+
 
 If you step through this you'll see that after attending to various shutdown
 tasks, it calls `mainbus_poweroff` to shut off the electricity on the system
