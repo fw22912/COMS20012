@@ -179,11 +179,13 @@ You should be able to answer the following questions:
 1. Which version of System/161 and OS/161 are you using?  base system version 2.0.3
 2. Where was OS/161 developed and copyrighted?  Harvard College
 3. How much memory and how many CPU cores was System/161 configured to use?  8 CPU cores, 16208K Physical memory
-4. What configuration was used by your running kernel?   
-5. How many times has your kernel been compiled?
+4. What configuration was used by your running kernel?   ramsize=16M  cpus=8
+5. How many times has your kernel been compiled?  
 
 Now let's try to play with configuration:
 1. Boot your OS/161 kernel with a different number of cores (say... 4)
+   ![Screenshot from 2024-03-21 16-45-43](https://github.com/fw22912/COMS20012/assets/146180764/aca3a388-1512-40a1-b1f2-fc0efae59b05)
+
 2. Try booting with 256K of memory. What happens?
 
 
