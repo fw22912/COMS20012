@@ -111,6 +111,8 @@ We are going to use `LAB5` configuration:
 cd kern/conf
 ./config LAB5
 ```
+![Screenshot from 2024-03-21 16-21-05](https://github.com/fw22912/COMS20012/assets/146180764/7fd6ec5e-8a26-40dc-ac0e-3d31c143d885)
+
 
 Have a look at the content of `LAB5` and `conf.kern`. In particular, `conf.kern`
 determine what files get built. You may need to modify this in later assignments.
@@ -126,6 +128,9 @@ bmake depend
 bmake
 bmake install
 ```
+
+![Screenshot from 2024-03-21 16-22-31](https://github.com/fw22912/COMS20012/assets/146180764/874e44d2-f574-4dcf-94c9-3e981f37e792)
+
 
 ## Running OS/161 kernel
 
@@ -150,6 +155,9 @@ Now let's run our kernel:
 sys161 kernel
 ```
 
+![Screenshot from 2024-03-21 16-23-39](https://github.com/fw22912/COMS20012/assets/146180764/9f060542-2123-4905-886c-33cb09f70188)
+
+
 What just happened? You ran one computer program (sys161) that loaded your
 kernel (from the kernel) file. Your kernel is itself a program expressed as
 a series of MIPS r3000 instructions, which were interpreted by sys161 and
@@ -161,14 +169,17 @@ Your kernel should now be up and running! Play around a bit in the menu and see
 what you can do. Once you are done, you can shut it down simply by typing
 `exit`.
 
+![Screenshot from 2024-03-21 16-27-21](https://github.com/fw22912/COMS20012/assets/146180764/0a9691c7-b013-4ef4-b402-4f9d17b6cda3)
+
+
 ### Exercises
 
 Examine the output produced by your kernel as it boots and shuts down.
 You should be able to answer the following questions:
-1. Which version of System/161 and OS/161 are you using?
-2. Where was OS/161 developed and copyrighted?
-3. How much memory and how many CPU cores was System/161 configured to use?
-4. What configuration was used by your running kernel?
+1. Which version of System/161 and OS/161 are you using?  base system version 2.0.3
+2. Where was OS/161 developed and copyrighted?  Harvard College
+3. How much memory and how many CPU cores was System/161 configured to use?  8 CPU cores, 16208K Physical memory
+4. What configuration was used by your running kernel?   
 5. How many times has your kernel been compiled?
 
 Now let's try to play with configuration:
