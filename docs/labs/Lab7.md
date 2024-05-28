@@ -9,19 +9,6 @@ Lab Machine remotely. To do so follow [the online instructions](https://uob.shar
 If you experience difficulty contact the IT service.
 
 
-## Tools
-
-You are second year computer science students and we expect some autonomy
-in using the "tools of the trade".
-You should be familiar (or familiarize yourself) with the following tools:
-1. [Vagrant](https://learn.hashicorp.com/tutorials/vagrant/getting-started-index?in=vagrant/getting-started);
-2. [VirtualBox](https://www.virtualbox.org/manual/ch01.html);
-3. [git](https://git-scm.com/docs/gittutorial);
-4. GDB, see [LAB 5](https://github.com/cs-uob/COMS20012/blob/master/docs/labs/lab%205.md).
-Please, make sure those tools are installed and that you know how to use them.
-You should have used them in previous labs in this unit, and others.
-Do get in touch with your TA if you are facing issues.
-
 ## Installation
 
  - (On Windows) Download https://git-scm.com/download/[Git for Windows].
