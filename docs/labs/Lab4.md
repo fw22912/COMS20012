@@ -155,7 +155,7 @@ This tells us that the most recent packet that was sent from Head Office (which 
 
 
 **_Question: Can you give three examples of popular application layer protocols with well-known TCP port numbers?_**  
---> DNS, HTTP, HTTPS
+--> HTTP(80), HTTPS(443), FTP(20, 21)
 
 ### Send from a Spoofed Source IP Address 
 
@@ -177,10 +177,18 @@ The Attacker’s Router would also need to be reconfigured to suit. Rather than 
     ![image](https://github.com/fw22912/COMS20012/assets/146180764/b249d99c-cf82-4ccd-8b8f-a58d4522a00f)
 
 
-**_Qestion: What is Spoofing?_** 
---> snatching
+**_Question: What is Spoofing?_** 
++ Spoofing is where an attacker pretends to be a legitimate entity by falsifying the data.
++ This allows the attacker to gain unauthorised access to systems, steal sensitive information, or disrupt network services.
 
 ### Gain Access through the [Firewall](https://www.simplilearn.com/tutorials/cyber-security-tutorial/what-is-firewall)
+
+The IoT Device Registration Server has another level of protection. Even though an attacker has been able to access the network, they would still require a username and password to gain control. This is why the **strength of the password is important**, so that it cannot easily be guessed. Other security measures, such as temporary lockouts after a number of incorrect attempts and the use of multifactor authentication would also help to prevent access to the IoT controls. Even without being able to crack the password and control IoT devices, an attacker could still cause harm to the server from inside the network, such as creating a DoS (denial of service) attack. 
+
+It may also be possible for someone to determine the username and password by “sniffing” and examining the traffic that passes when others log in. These web pages are using the HTTP protocol and, therefore, any passwords are visible data (or plaintext). Using a properly encrypted HTTPS (secure HTTP) website would prevent this. 
+
+<br>
+<br>
 1.	Click the Attacker’s PC to open a window. 
 2.	From the Desktop tab, open the Web Browser. 
 3.	Type the IP address of the Branch Server, which is `192.168.3.5` and press `Enter` or click `Go`. 
@@ -189,10 +197,6 @@ You should now see the web pages on the Branch Server. The attacker also has acc
 4.	Type the IP address of the Registration Server, which is `192.168.3.100` and press `Enter` or click `Go`. 
 ![image](https://github.com/fw22912/COMS20012/assets/146180764/a6f7c749-324b-4172-bf21-793b01fcc8df)
 
-
-The IoT Device Registration Server has another level of protection. Even though an attacker has been able to access the network, they would still require a username and password to gain control. This is why the strength of the password is important, so that it cannot easily be guessed. Other security measures, such as temporary lockouts after a number of incorrect attempts and the use of multifactor authentication would also help to prevent access to the IoT controls. Even without being able to crack the password and control IoT devices, an attacker could still cause harm to the server from inside the network, such as creating a DoS (denial of service) attack. 
-
-It may also be possible for someone to determine the username and password by “sniffing” and examining the traffic that passes when others log in. These web pages are using the HTTP protocol and, therefore, any passwords are visible data (or plaintext). Using a properly encrypted HTTPS (secure HTTP) website would prevent this. 
 
 5.	Assume the attacker has discovered the password. Type the username _devices_ and the password _vB82parsnip!_ to sign in to the registration server.
    ![image](https://github.com/fw22912/COMS20012/assets/146180764/240308df-15ce-43bd-91b3-76fcb4933c41)
@@ -205,14 +209,6 @@ It may also be possible for someone to determine the username and password by �
 
 
 This demonstrates some of the security implications of having IoT devices connected to the Internet. If an attacker can gain access, they could potentially view inside secure areas with a webcam, create a nuisance or hazard by turning lights off, damage temperature-controlled equipment by disabling air-conditioning or even flood a building. 
-While this activity was largely theoretical, it is necessary to understand some of the security considerations that should be taken and the potential implications if ignored. In reality it would be more difficult to gain access through a firewall from the Internet by simply spoofing an IP address like this because any responses to your HTTP requests would be routed to the real IP address unless further efforts were made to redirect them. 
+While this activity was largely theoretical, it is necessary to understand some of the security considerations that should be taken and the potential implications if ignored. In reality it would be more difficult to gain access through a firewall from the Internet by simply spoofing an IP address like this, as he response will go to the real devicec(IP address) which is the IP address that the attacker spoofed.
++ In order to succeed in spoofing, the attacekd would need to make additional efforts (e.g., MITM)
 
-
-**Note:** This weeks lab *should* work on any machine... including
-an M1 Mac, a lab machine and anything else you can throw at it... but
-you *might* need to tweak things to get it all working; and if in
-doubt fall back to `ssh seis.bristol.ac.uk`
-
-Good Luck!
-
-Alma
