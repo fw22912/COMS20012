@@ -3,20 +3,7 @@
 
 Hi class.  In todays lab, you will learn more about networking and firewalls.  
 
-
-
-**Note:** Today’s lab DOES NOT work in Packet Tracer versions after 7.3. You need to either log in to the Engineering Desktop, where it is already installed, via this link: https://rdweb.wvd.microsoft.com/arm/webclient/index.html, or install Packet Tracer Version 7.3 on to your own laptop. Here is the [LINK](https://u.pcloud.link/publink/show?code=kZm7KgVZmRzv7EJdhHfxv7cRscruY5kfUznV&fbclid=IwAR2KkUMzaCzwedQjeLeuPIw5zrMEc4y7fA2tdy3ghMbPlTN_ODP205IvDd8) for packet tracer for different environments (AMD, Windows and Mac). Before installing Packet Tracer 7.3. version please uninstall any versions you already have on your system.
-
-
-**Note:** If you haven't done so already (e.g. from previous labs) you will need to create a [CISCO account](https://www.cisco.com/c/en/us/about/help/login-account-help.html) to be able to use Packet Tracer for free! 
-
-
-**Note:** Working from home?  If you need help post a question in the Teams group for the unit and we'll try and help you from there, but if at all possible do try and attend the lab where there will be *more* support. 
-
-
-
 ## Getting familiar with the network
-
 
 •	Open the Packet Tracer simulation, [02_PacketTracer_Testing_firewall.pka](https://github.com/cs-uob/COMS20012/blob/master/docs/materials/02_PacketTracer_Testing_firewall.pka) inside Cisco Packet Tracer. If you are asked whether to update devices, click No. 
 
@@ -24,16 +11,21 @@ Hi class.  In todays lab, you will learn more about networking and firewalls.
 
 In the green section is some of the equipment that may be found in a small office that operates as a branch of a larger business. 
 
-•	The Branch PC is just a normal computer workstation in the office. It can be used to access information and controls on the servers, or access the head office via the Internet. 
+•	**Branch PC**: ia normal computer workstation in the office. 
+      + It can be used to access information and controls on the servers, or access the head office via the Internet. 
 
-•	The Fire Sprinkler, Webcam, Light and Drain are all connected to the network so they can each be remotely monitored and operated. 
+•	**Fire Sprinkler, Webcam, Light, Drain**: all connected to the network so they can each be remotely monitored and operated. 
 
-•	The Thermostat measures ambient temperature and controls the heating and cooling. This is also connected so it may be monitored and controlled across the network. 
+•	**Thermostat**: measures ambient temperature and controls the heating and cooling. 
+      + This is also connected so it may be monitored and controlled across the network. 
 
-•	The Branch Server contains the databases of sensitive company and customer information.  
+•	**Branch Server**: contains the databases of sensitive company and customer information.  
 
-•	The IoT Device Registration Server acts as a single interface that can be logged in to for monitoring and controlling all devices. {For more information on IoT see: [Link](https://www.oracle.com/uk/internet-of-things/what-is-iot/#:~:text=What%20is%20IoT%3F,and%20systems%20over%20the%20internet.)}. The yellow section represents the head office of the company, located in a different city from the branch offices. Head office can connect to branch servers and IoT device registration servers via the Internet as needed. Branches can also connect to the server in the head office to access information. 
-The red section contains an attacker’s equipment, which could be located anywhere else in the world. The attacker may have various reasons for wanting to gain access to sensitive company information and gain control over connected devices, such as for financial benefits, to disrupt or as a personal challenge. 
+•	**IoT Device Registration Server**: acts as a single interface that can be logged in to for monitoring and controlling all devices. 
+      + The yellow section represents the head office of the company, located in a different city from the branch offices. 
+      + Head office can connect to branch servers and IoT device registration servers via the Internet as needed. Branches can also connect to the server in the head office to access information. 
+      + The red section contains an attacker’s equipment, which could be located anywhere else in the world. 
+      + The attacker may have various reasons for wanting to gain access to sensitive company information and gain control over connected devices, such as for financial benefits, to disrupt or as a personal challenge. 
 
 
 ## Test the network
