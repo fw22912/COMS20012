@@ -101,7 +101,13 @@ Let's assume the attacker already knows the actual IP address of the Branch Serv
 4.	Repeating step 3, try typing the IP address of Branch Server `192.168.3.5` in the box next to URL, then press Enter or click Go.
 ![image](https://github.com/fw22912/COMS20012/assets/146180764/0389b35c-b69c-4c11-ac8d-3b963486339e)
 
-After a few seconds you will see a message in the browser, "Request Timeout". In this case, the routers were able to use their routing tables to send the request for a web page towards the correct network, but the packets were dropped upon reaching the Branch Router. They were dropped, or ignored, because the source IP address of the packet was the Attacker’s PC, and did not match any firewall rules allowing access. 
+
++ The initial request from the attacker's PC is forwared correctly through the network using the routing tables of the routers.
++ When the request reaches Branch router, the firewall inspects the packet.
++ The firewall checks the source IP address of the packet. (which will be attacker's here)
++ The firewall compares the source IP address against its configured rules. Since the attacker's IP address does not match any of the rules that allow access, the packet is deemed unauthorised.
++ As a result, the firewall drops the packet, preventing it from reaching its intended destination.
++ The browsser on the attacker's PC will show as "Request Timeout" as it did not receive a response within the expected time frame.
 
 
 
@@ -109,7 +115,7 @@ After a few seconds you will see a message in the browser, "Request Timeout". In
 
 As we said in the lectures, you cannot protect or attack a system or network that you do not know! To be able to penetrate into the system/network, you need to get familiar with it! 
 
-The attacker is aware that there is communication between the company’s Head Office and the Branch and would like to view some of these packets to learn which IP addresses are being used. One way this could be achieved is by sending an email to a company staff member using an email address listed on their public website. The email would appear to be genuine, but actually contained a malicious attachment which installed spyware on the staff member’s computer. This spyware then records traffic sent from the laptop computer in Head Office and secretly emails all the details to the attacker. Attempting to attack by tricking someone to installing spyware or malware on their own computer is known as <b>phishing</b>. 
+The attacker is aware that there is communication between the company’s Head Office and the Branch and would like to view some of these packets to learn which IP addresses are being used. One way this could be achieved is by sending an email to a company staff member using an email address listed on their public website. The email would appear to be genuine, but actually contained a **malicious attachment** which installed **spyware** on the staff member’s computer. This spyware then records traffic sent from the laptop computer in Head Office and secretly emails all the details to the attacker. Attempting to attack by tricking someone to installing spyware or malware on their own computer is known as <b>**phishing**</b>. 
 The Sniffer, which can be seen in the red section of the simulation workspace, is a device which will represent spyware for this Packet Tracer simulation by recording network traffic details within the head office. 
 1.	Click the Sniffer. A window will open. 
 2.	Click the GUI tab (Graphical User Interface).
@@ -118,26 +124,29 @@ The Sniffer, which can be seen in the red section of the simulation workspace, i
 You will see a number of HTTP packets listed in a column on the left of the window which were recorded during your earlier activity. The ones at the bottom of the list should be the most recent, which were generated when accessing the IoT Device Registration Server from the laptop in the head office. 
 
 **_Question: In the world of networking, what is a sniffer? Did we talk about that in the lecture? Which one_**?
---> packet sniffing
++ **Sniffer**: a tool used in networking to capture and analyse network traffic.
+        + It can monitor data as it traverses network, providing insights into various aspects of the network's operation and performance.
+  
++ **Packet sniffing**: 
 
 4.	In the Sniffer window, click the last HTTP packet (at the bottom of the list) and look at its contents as they appear in the section on the right.
    ![image](https://github.com/fw22912/COMS20012/assets/146180764/b48473ef-a58a-40e6-9713-4a8ac7fb84e1)
 
-This shows you some details of the packet contents in the form of an upsidedown TCP/IP model (Physical or Network Access layer at the top) . You may need to scroll down to see all details.
-![image](https://github.com/fw22912/COMS20012/assets/146180764/81b97846-35a9-4dfe-a399-9f484ef7f2a1)
++ This shows you some details of the packet contents in the form of an upsidedown **TCP/IP model** (Physical or Network Access layer at the top) .
+![image](https://github.com/fw22912/COMS20012/ssets/146180764/81b97846-35a9-4dfe-a399-9f484ef7f2a1)
 
   
-•	The Ethernet II section includes the source and destination MAC addresses, seen as twelve hexadecimal figures and labelled as SRC ADDR and DEST ADDR. 
+•	**Ethernet II section**: includes the source and destination MAC addresses, seen as twelve hexadecimal figures and labelled as SRC ADDR and DEST ADDR. 
 ![image](https://github.com/fw22912/COMS20012/assets/146180764/24d268e9-0713-43f0-af63-5452683fcf1a)
 
 
-•	The IP section includes the source and destination IPv4 addresses, seen as decimal numbers and labelled as SRC IP and DST IP.  
+•	**IP section**: includes the source and destination IPv4 addresses, seen as decimal numbers and labelled as SRC IP and DST IP.  
 ![image](https://github.com/fw22912/COMS20012/assets/146180764/a105d9e5-3b6d-43d3-91c1-cf205b75430f)
 
-•	The TCP section shows the source and destination ports labelled as SOURCE PORT and DESTINATION PORT.  
+•	**TCP section**: shows the source and destination ports labelled as SOURCE PORT and DESTINATION PORT.  
 ![image](https://github.com/fw22912/COMS20012/assets/146180764/493f0582-a277-466e-acdb-f327c48c5694)
 
-•	The HTTP section is show in the application layer, which in this case is the HTTP data request instructions relating to the IoT devices.  
+•	**HTTP section**: shown in the application layer, which in this case is the HTTP data request instructions relating to the IoT devices.  
 ![image](https://github.com/fw22912/COMS20012/assets/146180764/4e0bf2dc-f6ad-45a2-8830-533c640eee7a)
 
 If the previous steps were done in the order of these instructions, you should see that the destination IP (DST IP) of the packet is `192.168.3.100` and the source IP (SRC IP) of the packet is `10.1.1.3`. 
