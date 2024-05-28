@@ -76,6 +76,9 @@ This happens because you overflowed the return address and the program is now tr
 
 You can use `run $(perl -e 'print "A"xSize, "Address"')`
 
++ We would like to determine the correct size that causes the overflow without crashing the program (`Segmentation Fault`).
++ Once you find the correct size, replace part of th einput with the address of the 'admin' function.
+
 **Example** Let's assume Address is 0x0000555555554858. 
 
 ![Screenshot from 2024-03-14 17-11-28](https://github.com/fw22912/COMS20012/assets/146180764/f86a09d8-0846-440d-88ae-a99e6c9281bd)
