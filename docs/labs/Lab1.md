@@ -1,5 +1,4 @@
-# Lab 1 Spring 2024
-## Dr. Alma Oracevic
+# Lab 1 
 
 ### Problem 1
 
